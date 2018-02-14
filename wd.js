@@ -1,8 +1,9 @@
 // javascript for webdok example
-window.addEventListener("load",
-	function(){
+window.addEventListener("load", armMyEvents() );
+
+function armMyEvents() {
 		window.addEventListener("scroll", 
-		function(){
+		   function(){
 			var nodes = document.querySelectorAll("[boom-anim]");
 			for (var i=0; i<nodes.length; i++){
 				if(nodes[i].getBoundingClientRect().top>=0 &&
@@ -27,5 +28,6 @@ window.addEventListener("load",
 
 
 
-		})
-	})
+		   }
+		)
+}
