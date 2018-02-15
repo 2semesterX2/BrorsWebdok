@@ -18,6 +18,10 @@ article {
 	min-height: 90vh;
 }
 
+video {
+	width:80%;
+}
+
 h1 {
 	position: absolute;
 	width: 95%;

@@ -1,13 +1,14 @@
 // javascript for webdok example
 window.addEventListener("load", armMyEvents() );
 
+var myPauseTime=0;
+
 function armMyEvents() {
 		window.addEventListener("scroll", 
 		   function(){
 			var nodes = document.querySelectorAll("[boom-anim]");
 			for (var i=0; i<nodes.length; i++){
-				if(nodes[i].getBoundingClientRect().top>=0 &&
-					nodes[i].getBoundingClientRect().bottom<window.innerHeight)
+				if(elFllVsbl(nodes[i]))
 				{
 					nodes[i].setAttribute("class","active");
 				} else {	
@@ -17,8 +18,6 @@ function armMyEvents() {
 
 			var nodes= document.getElementsByTagName("P");
 			for (var i=0; i<nodes.length; i++){
-		//		if(nodes[i].getBoundingClientRect().top>=0 &&
-		//			nodes[i].getBoundingClientRect().bottom<window.innerHeight)
 				if(elFllVsbl(nodes[i]))
 				{
 					nodes[i].setAttribute("class","fading");
@@ -32,13 +31,26 @@ function armMyEvents() {
 				{
 					if (!(mySound.currentTime>0)){
 						mySound.play();
-						console.log("PLAY");
+//						console.log("PLAY");
 					}
 				} else {	
 					mySound.pause();
 					mySound.currentTime=0;
-					console.log("PAUSE");
+//					console.log("PAUSE");
 				}
+
+			var myVid = document.getElementById("myvideo");
+				if (elFllVsbl(myVid))
+					{
+						if (!(myVid.currentTime>0) || (myVid.currentTime==myPauseTime)){
+							myVid.play();
+							console.log("VideoPLAY");
+						}
+					} else {	
+						myVid.pause();
+						myPauseTime = myVid.currentTime;
+						console.log("VideoPAUSE");
+					}
 		   }
 		)
 }
