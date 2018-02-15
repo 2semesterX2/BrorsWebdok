@@ -12,14 +12,18 @@ body {
 
 article {
 	position: relative;
-	height: 390px;
+	height: 70vh;
 	width: 90%;
-	margin: 2em;
-	min-height: 90vh;
+	margin: 0 5%;
+	min-height: 70vh;
 }
 
 video {
-	width:80%;
+	margin: 0 5%;
+	min-height: 70vh;
+	max-height: 70vh;
+	margin:5%;
+	width:90%;
 }
 
 h1 {
@@ -37,10 +41,30 @@ img {
 	position: absolute;
 	left: 0px;
 	top: 0px;
-	width: 50%;
-	height: 50%;
+	height: 100%;
 
 }
+
+#salling {
+	position: absolute;
+	overflow:hidden;
+
+	position: relative;
+	height: 70vh;
+	width: 90%;
+	margin: 5%;
+	min-height: 70vh;
+
+}
+
+#salling img{
+	width: 3906px;
+	height: 530px;
+}
+
+
+
+
 p {
 	position: relative;
 	margin: 2% 5% 1% 5%;
@@ -72,4 +96,15 @@ p.fading {
 	0% { opacity:0 ;}
 	50% { opacity:0 ;}
 	100% { opacity:1 ;}
+}
+
+#salling img {
+	animation: simRotate 34s;
+	animation-iteration-count:infinite;
+	animation-timing-function: linear;
+}
+
+@keyframes simRotate {
+	0% { transform: translate(0%)}
+	100% { transform: translate(-81.2%)}
 }
